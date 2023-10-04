@@ -8,9 +8,10 @@ import { LoggerMiddleware } from 'src/common/middleware/logger.middleware';
 import logger from 'src/common/middleware/function/logger';
 import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
+import { ConfigFactory } from 'src/config';
 
 @Module({
-  providers: [CatsService],
+  providers: [CatsService, ConfigFactory],
   controllers: [CatsController],
 })
 export class CatsModule implements NestModule {
@@ -19,6 +20,6 @@ export class CatsModule implements NestModule {
       .apply(LoggerMiddleware, logger)
       .forRoutes({ path: 'cat', method: RequestMethod.POST });
     consumer.apply(LoggerMiddleware).forRoutes(CatsController);
-    consumer.apply(logger);
+    // consumer.apply(logger);
   }
 }
