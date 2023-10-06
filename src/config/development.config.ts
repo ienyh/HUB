@@ -2,8 +2,8 @@ import BaseConfig from './base';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
-export default class DevConfig extends BaseConfig {
+export default class DevelopmentConfig extends BaseConfig {
   get env(): string {
-    return 'dev';
+    return 'development';
   }
 }

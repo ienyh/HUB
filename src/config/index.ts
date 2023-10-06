@@ -1,10 +1,12 @@
 import BaseConfig from './base';
-import DevConfig from './dev.config';
-import ReleaseConfig from './release.config';
+import DevelopmentConfig from './development.config';
+import ProductionConfig from './production.config';
 
 export function getConfigAdapter(): BaseConfig {
   const Config =
-    process.env.NODE_ENV === 'development' ? DevConfig : ReleaseConfig;
+    process.env.NODE_ENV === 'development'
+      ? DevelopmentConfig
+      : ProductionConfig;
   return new Config();
 }
 

@@ -9,6 +9,6 @@ export class RssController {
   @Header('Cache-Control', 'none')
   @Header('Content-Type', 'text/xml;charset=utf-8')
   async xml() {
-    return await this.service.xml();
+    return await this.service.heartstone();
   }
 }
