@@ -3,7 +3,7 @@ name: Tser CI
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   # 发布到服务器
