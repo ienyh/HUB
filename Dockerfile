@@ -6,10 +6,12 @@ ARG NODE_ENV=production
 
 WORKDIR /app
 COPY package*.json ./
+COPY tsconfig.build.json ./
+COPY tsconfig.json ./
 
 RUN npm install
-RUN npm run buid
-COPY dist /app
+COPY . .
+RUN npm run build
 
 EXPOSE 1300
 
