@@ -13,4 +13,4 @@ COPY dist /app
 
 EXPOSE 1300
 
-CMD ["npm", "run", "start:prod"]
+CMD ["node", "dist/main.js"]
